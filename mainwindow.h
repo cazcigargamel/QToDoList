@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QDataStream>
+#include <QListWidget>
 
 class MainWindow : public QMainWindow
 {
@@ -38,6 +39,13 @@ class MainWindow : public QMainWindow
 
     QString m_filename;
     bool m_changed;
+    void create();
+    void open(QString path);
+    void save(QString path);
+    void checkSave();
+    void checkItem(Qt::CheckState state, QString name);
+    void createItem(Qt::CheckState state, QString name);
+    QListWidget *listWidget = nullptr;
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
